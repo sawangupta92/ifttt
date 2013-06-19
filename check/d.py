@@ -1,18 +1,17 @@
-from json import load,dumps
+from json import load
 from urllib2 import urlopen
-from pprint import pprint
-import json
-from django.utils.functional import Promise
-from django.utils.encoding import force_text
-from django.core.serializers.json import DjangoJSONEncoder
-
-class LazyEncoder(DjangoJSONEncoder):
-    def default(self, obj):
-        if isinstance(obj, Promise):
-            return force_text(obj)
-        return super(LazyEncoder, self).default(obj)
-    def get_temp(self):
-    	data = urlopen('http://openweathermap.org/data/2.1/find/name?q=new/delhi')
-			self.default(data)
-			# c=load(data)
-			return c
+def get_temp():
+	b='new delhi'
+	n='http://openweathermap.org/data/2.1/find/name?q='+b.replace(' ','/')
+	data = urlopen('http://openweathermap.org/data/2.1/find/name?q='+b.replace(' ','/'))
+	# data=urlopen(n)
+	c=load(data)
+	# b='d b'
+	# c=b.replace(' ','')
+	# k=c['list'][0]['weather'][0]['main']
+	# print city['weather']
+	# k=city['weather'][0]
+	# print k
+	print c
+ 	# return k
+get_temp()

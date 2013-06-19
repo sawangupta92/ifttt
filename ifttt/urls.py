@@ -16,4 +16,5 @@ urlpatterns = patterns('',
     # url(r'^admin/', include(admin.site.urls)),
     url(r'^check_index','check.views.index'),
     url(r'^view_temp','check.views.view_temp'),
+    url(r'^mail','check.views.mail'),
 )
