@@ -127,9 +127,8 @@ INSTALLED_APPS = (
     # 'django.contrib.admindocs',
     'south',
     'check',
-    'django_cron'
+    'kronos',
 )
-CRON_CLASSES=['check.views.MyCronJob',]
 MAILER_EMAIL_BACKEND = 'django_ses.SESBackend'
 EMAIL_BACKEND='django.core.mail.backends.smtp.EmailBackend'
 EMAIL_PORT=587
