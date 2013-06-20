@@ -111,7 +111,7 @@ TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
-    '/Users/shubhamgupta/Desktop/sawan/ifttt/check_temp/',
+    '/home/sawan/Desktop/sawan/ifttt/check_temp',
 )
 
 INSTALLED_APPS = (
@@ -127,7 +127,9 @@ INSTALLED_APPS = (
     # 'django.contrib.admindocs',
     'south',
     'check',
+    'django_cron'
 )
+CRON_CLASSES=['check.views.MyCronJob',]
 MAILER_EMAIL_BACKEND = 'django_ses.SESBackend'
 EMAIL_BACKEND='django.core.mail.backends.smtp.EmailBackend'
 EMAIL_PORT=587
