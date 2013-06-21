@@ -18,4 +18,6 @@ urlpatterns = patterns('',
     url(r'^view_temp','check.views.view_temp'),
     url(r'^mail','check.views.mail'),
     url(r'^test','check.views.test'),
+    url(r'^create_user','check.views.create_user'),
+    url(r'^mysave','check.views.mysave')
 )
